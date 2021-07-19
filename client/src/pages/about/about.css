@@ -1,0 +1,32 @@
+.about {
+    /* background-image: url('https://image.freepik.com/free-photo/blue-concrete-textured-background_53876-63608.jpg'); */
+    background: -webkit-linear-gradient(
+        360deg,
+        rgb(149, 207, 173) 10%,
+        #ffffff 200%
+    );
+    font-size: 1.2rem;
+    margin-top: 15vh;
+    height: 60vh;
+}
+
+.content {
+    padding-top: 50px;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.heading {
+    font-family: 'Josefin Sans', sans-serif;
+    margin-bottom: 5vh;
+}
+
+.aboutSection {
+    font-family: 'Varela Round', sans-serif;
+    line-height: 1.7;
+}
+
+.aboutSection > p:last-of-type {
+    font-weight: bold;
+    margin-top: 15px;
+}
