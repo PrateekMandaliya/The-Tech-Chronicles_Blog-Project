@@ -5,10 +5,12 @@ import './topbar.css';
 
 export const TopBar = () => {
     const { user, dispatch } = useContext(Context);
-    const PF = 'http://localhost:5000/images/';
-    const profilePicture = user.profilePicture
-        ? PF + user.profilePicture
-        : 'https://i0.wp.com/feedbackhall.com/uploads/user-icon.png';
+    // const PF = 'http://localhost:3001/images/';
+    const PF = window.location.origin + '/images/';
+    const profilePicture =
+        user && user.profilePicture
+            ? PF + user.profilePicture
+            : 'https://i0.wp.com/feedbackhall.com/uploads/user-icon.png';
     const handleLogout = () => {
         dispatch({ type: 'LOGOUT' });
     };

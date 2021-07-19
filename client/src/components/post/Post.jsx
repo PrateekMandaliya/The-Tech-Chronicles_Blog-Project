@@ -2,8 +2,9 @@ import { Link } from 'react-router-dom';
 import './post.css';
 
 export default function Post({ post }) {
-    const PF = 'http://localhost:5000/images/';
-    // const PF = window.location.href + 'images/';
+    // const PF = 'http://localhost:5000/images/';
+    // const PF = window.location.origin + 'images/';
+    const PF = process.env.PUBLIC_URL + 'images/';
     return (
         <div className='post'>
             {post.photo && (

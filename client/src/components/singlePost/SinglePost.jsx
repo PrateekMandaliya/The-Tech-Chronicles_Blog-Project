@@ -10,7 +10,8 @@ export default function SinglePost() {
     const location = useLocation();
     const path = location.pathname.split('/')[2];
     const [post, setPost] = useState({});
-    const PF = '//localhost:5000/images/';
+    // const PF = '//localhost:5000/images/';
+    const PF = window.location.href + 'images/';
     const { user } = useContext(Context);
     const [title, setTitle] = useState('');
     const [desc, setDesc] = useState('');
