@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import './post.css';
+import ReactHtmlParser from 'react-html-parser';
 
 export default function Post({ post }) {
     const PF = 'http://localhost:5000/images/';
@@ -29,7 +30,7 @@ export default function Post({ post }) {
                     {new Date(post.createdAt).toDateString()}
                 </span>
             </div>
-            <p className='postDesc'>{post.desc}</p>
+            <p className='postDesc'>{ReactHtmlParser(post.desc)}</p>
         </div>
     );
 }

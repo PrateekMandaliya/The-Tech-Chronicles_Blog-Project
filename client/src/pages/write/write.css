@@ -16,6 +16,7 @@
 
 .writeFormGroup {
     margin-left: 150px;
+    margin-top: 30px;
     display: flex;
     align-items: center;
 }
@@ -75,4 +76,9 @@
 
 .catsInput:focus {
     outline: none;
+}
+
+.ck-editor__editable_inline {
+    min-height: 400px;
+    min-width: 70vw;
 }

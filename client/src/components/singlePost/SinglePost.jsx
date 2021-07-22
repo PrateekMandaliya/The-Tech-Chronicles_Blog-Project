@@ -4,6 +4,9 @@ import { useLocation } from 'react-router';
 import { Link } from 'react-router-dom';
 import './singlePost.css';
 import { Context } from '../../context/Context';
+import ReactHtmlParser from 'react-html-parser';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default function SinglePost() {
     //Whenever we visit this page, we use the page's url to find post it, and fetch post
@@ -99,13 +102,16 @@ export default function SinglePost() {
                     </span>
                 </div>
                 {updateMod ? (
-                    <textarea
-                        className='singlePostDescInput'
-                        value={desc}
-                        onChange={(e) => setDesc(e.target.value)}
+                    <CKEditor
+                        editor={ClassicEditor}
+                        data={desc}
+                        onChange={(event, editor) => {
+                            const data = editor.getData();
+                            setDesc(data);
+                        }}
                     />
                 ) : (
-                    <p className='singlePostDesc'>{desc}</p>
+                    <p className='singlePostDesc'>{ReactHtmlParser(desc)}</p>
                 )}
                 {updateMod && (
                     <button className='singlePostButton' onClick={handleUpdate}>

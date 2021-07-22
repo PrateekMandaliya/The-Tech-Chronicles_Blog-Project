@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useContext, useState } from 'react';
 import './write.css';
 import { Context } from '../../context/Context';
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 export default function () {
     const [title, setTitle] = useState('');
@@ -114,13 +116,23 @@ export default function () {
                         className='catsInput'
                     />
                 </div>
-                <div className='writeFormGroup'>
+                {/* <div className='writeFormGroup'>
                     <textarea
                         placeholder='Say something...'
                         type='text'
                         className='writeInput writeText'
                         onChange={(e) => setDesc(e.target.value)}
                     ></textarea>
+                </div> */}
+                <div className='writeFormGroup'>
+                    <CKEditor
+                        editor={ClassicEditor}
+                        data={desc}
+                        onChange={(event, editor) => {
+                            const data = editor.getData();
+                            setDesc(data);
+                        }}
+                    />
                 </div>
 
                 <button className='writeSubmit' type='submit'>
