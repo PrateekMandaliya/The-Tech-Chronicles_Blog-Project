@@ -13,8 +13,8 @@ export default function Settings() {
     const [password, setPassword] = useState(user.password);
     const [success, setSuccess] = useState(false);
 
-    // const PF = 'http://localhost:5000/images/';
-    const PF = window.location.href + 'images/';
+    const PF = 'http://localhost:5000/images/';
+    // const PF = window.location.href + 'images/';
 
     const handleSubmit = async (e) => {
         e.preventDefault();

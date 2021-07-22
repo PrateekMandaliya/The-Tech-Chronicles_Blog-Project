@@ -5,8 +5,8 @@ import './topbar.css';
 
 export const TopBar = () => {
     const { user, dispatch } = useContext(Context);
-    // const PF = 'http://localhost:3001/images/';
-    const PF = window.location.origin + '/images/';
+    const PF = 'http://localhost:5000/images/';
+    // const PF = window.location.origin + '/images/';
     const profilePicture =
         user && user.profilePicture
             ? PF + user.profilePicture
